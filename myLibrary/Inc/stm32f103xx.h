@@ -100,6 +100,7 @@ typedef struct
 
 
 #include "RCC.h"
+#include "GPIO.h"
 
 #endif
 
