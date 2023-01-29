@@ -1,12 +1,19 @@
-#ifndef		INC_STM32103XX_H_
-#define		INC_STM32F103XX_H
+/*
+ * stm32f103xx.h
+ *
+ *  Created on: 28 Oca 2023
+ *      Author: Oguz
+ */
+
+#ifndef MYLIBRARY_STM32F103XX_H_
+#define MYLIBRARY_STM32F103XX_H_
 
 #include <stdio.h>
 
 
 
 /*
- * Memory Base Adresses
+ * Memory Base Addresses
  */
 
 #define FLASH_BASE           	0x08000000UL 					/*!< FLASH base address in the alias region */
@@ -102,5 +109,4 @@ typedef struct
 #include "RCC.h"
 #include "GPIO.h"
 
-#endif
-
+#endif /* MYLIBRARY_STM32F103XX_H_ */

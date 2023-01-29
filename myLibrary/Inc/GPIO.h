@@ -25,8 +25,8 @@
 
 typedef enum
 {
-	GPIO_Pin_Reset=0x00,
-	GPIO_Pin_Set  =!GPIO_Pin_Reset,
+	GPIO_PIN_RESET=0x00,
+	GPIO_PIN_SET =!GPIO_PIN_RESET,
 
 }GPIO_PinState_t;
 
@@ -38,9 +38,11 @@ typedef struct
 	uint32_t PuPd;
 	uint32_t Speed;
 	uint32_t Alternate;
-}GPIO_Init_TypeDef_t;
+}GPIO_InitTypeDef_t;
 
-void GPIO_WritePin(GPIO_TypeDef_t *GPIO_x, uint16_t pinNumber,GPIO_PinState_t pinState );
+GPIO_PinState_t GPIO_ReadPin(GPIO_TypeDef_t *GPIOx, uint16_t pinNumber);
+void GPIO_WritePin(GPIO_TypeDef_t *GPIOx, uint16_t pinNumber,GPIO_PinState_t pinState );
+void GPIO_TogglePin(GPIO_TypeDef_t *GPIOx, uint16_t pinNumber);
 
 
 #endif

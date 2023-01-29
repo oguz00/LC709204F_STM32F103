@@ -16,7 +16,7 @@
  ******************************************************************************
  */
 
-#include <stm32f103xx.h>
+#include "stm32f103xx.h"
 
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
@@ -25,7 +25,9 @@
 
 int main(void)
 {
-	GPIO_WritePin(GPIOA,GPIO_PIN_5, GPIO_Pin_Set);
+	RCC->APB2ENR|=(1<<2)|(1<<4);
+	GPIO_WritePin(GPIOC, GPIO_PIN_13,GPIO_PIN_SET);
+	GPIO_WritePin(GPIOA,GPIO_PIN_5, GPIO_PIN_SET);
 
 
     /* Loop forever */

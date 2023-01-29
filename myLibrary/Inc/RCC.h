@@ -2,6 +2,7 @@
 #define	INC_RCC_H_
 
 
+
 #define RCC_GPIOA_CLK_ENABLE			do{	uint32_t tempValue=0;\
 										SET_BIT(RCC->APB2ENR,RCC_APB2ENR_GPIOAEN);\
 										tempValue=READ_BIT(RCC->APB2ENR,RCC_APB2ENR_GPIOAEN);\
