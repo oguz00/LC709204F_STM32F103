@@ -16,7 +16,8 @@
  ******************************************************************************
  */
 
-#include <stm32f103xx.h>
+#include "stm32f103xx.h"
+
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
@@ -24,8 +25,10 @@
 
 int main(void)
 {
-	RCC_GPIOA_CLK_ENABLE;
-	RCC_GPIOD_CLK_ENABLE;
+	RCC->APB2ENR|=(1<<2)|(1<<4);
+	GPIO_WritePin(GPIOC, GPIO_PIN_13,GPIO_PIN_SET);
+	GPIO_WritePin(GPIOA,GPIO_PIN_5, GPIO_PIN_SET);
+
 
     /* Loop forever */
 	for(;;);
