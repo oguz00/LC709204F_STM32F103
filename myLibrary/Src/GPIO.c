@@ -26,12 +26,6 @@ GPIO_PinState_t GPIO_ReadPin(GPIO_TypeDef_t *GPIOx, uint16_t pinNumber)
 	return bitStatus;
 }
 
-
-
-
-
-
-
 /**
   * @brief  GPIO_WritePin, sets or clears the selected data port bit.
   *
@@ -76,6 +70,16 @@ void HAL_GPIO_TogglePin(GPIO_TypeDef_t *GPIOx, uint16_t GPIO_Pin)
 
 }
 
+GPIO_Init(GPIO_TypeDef_t *GPIOx,GPIO_InitTypeDef_t *GPIO_ConfigStruct)
+{
+
+
+
+
+
+
+
+}
 
 
 

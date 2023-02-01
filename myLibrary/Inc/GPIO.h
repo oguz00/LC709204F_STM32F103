@@ -22,6 +22,22 @@
 #define	GPIO_PIN_15				(uint16_t)(0x8000)	/*<GPIO Pin 16  Selected*/
 #define	GPIO_PIN_ALL			(uint16_t)(0xFFFF)	/*<GPIO ALL PIN Selected*/
 
+/* Definitions for bit manipulation of CRL and CRH register */
+#define  GPIO_CR_MODE_INPUT         0x00000000u /*!< 00: Input mode (reset state)  */
+#define  GPIO_CR_CNF_ANALOG         0x00000000u /*!< 00: Analog mode  */
+#define  GPIO_CR_CNF_INPUT_FLOATING 0x00000004u /*!< 01: Floating input (reset state)  */
+#define  GPIO_CR_CNF_INPUT_PU_PD    0x00000008u /*!< 10: Input with pull-up / pull-down  */
+#define  GPIO_CR_CNF_GP_OUTPUT_PP   0x00000000u /*!< 00: General purpose output push-pull  */
+#define  GPIO_CR_CNF_GP_OUTPUT_OD   0x00000004u /*!< 01: General purpose output Open-drain  */
+#define  GPIO_CR_CNF_AF_OUTPUT_PP   0x00000008u /*!< 10: Alternate function output Push-pull  */
+#define  GPIO_CR_CNF_AF_OUTPUT_OD   0x0000000Cu /*!< 11: Alternate function output Open-drain  */
+
+
+/** @defgroup GPIO_speed_define  GPIO speed define
+  * @brief GPIO Output Maximum frequency
+  * @{
+  */
+
 
 typedef enum
 {
@@ -40,6 +56,7 @@ typedef struct
 	uint32_t Alternate;
 }GPIO_InitTypeDef_t;
 
+GPIO_Init(GPIO_TypeDef_t *GPIOx,GPIO_InitTypeDef_t *GPIO_ConfigStruct);
 GPIO_PinState_t GPIO_ReadPin(GPIO_TypeDef_t *GPIOx, uint16_t pinNumber);
 void GPIO_WritePin(GPIO_TypeDef_t *GPIOx, uint16_t pinNumber,GPIO_PinState_t pinState );
 void GPIO_TogglePin(GPIO_TypeDef_t *GPIOx, uint16_t pinNumber);
